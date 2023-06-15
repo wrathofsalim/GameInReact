@@ -1,38 +1,107 @@
-.App {
-  text-align: center;
+.mainContainer {
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color: white;
+    background-color: rgb(115, 123, 107);
+    border: 5px dotted black;
+    border-radius: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.cardsContainer {
+    display: flex;
+    flex-direction: row;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.messageContainer {
+    margin: 10px;
+    border-radius: 10px;
+    background-color: rgb(201, 255, 201);
+    color: rgb(20, 20, 20);
+    padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.button {
+    border-radius: 10px;
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background-color: rgb(222, 170, 86);
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+    transition: 0.2s ease-in-out;
+    user-select: none;
+    /* Standard syntax */
+    cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.button:hover {
+    scale: 0.95;
+    transition: 0.2s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(51, 85, 235, 0.499);
+    width: 250px;
+    height: 450px;
+    font-size: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.box .name {
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+    background-color: rgb(226, 247, 188);
+    color: black;
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+.box .avatar {
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    background-color: antiquewhite;
+    padding: 15px;
+    border-radius: 10%;
+    clear: both;
+}
+
+.box .stats {
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.green {
+    background-color: rgb(117, 255, 158);
+    color: rgb(6, 6, 6);
+
+}
+
+.red {
+    background-color: rgb(166, 36, 36);
 }
