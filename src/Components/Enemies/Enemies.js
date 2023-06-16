@@ -8,8 +8,8 @@ let enemies = [
     { name: "Dragon", img: "boss_1.png", attack: 7, health: 30, exp: 50 },
     { name: "Tired Monster", img: "enemy_4.png", attack: 5, health: 25, exp: 25 },
     { name: "Ghost Warrior", img: "enemy_5.png", attack: 9, health: 30, exp: 30 },
-    { name: "Flaming Skull", img: "enemy_6.png", attack: 10, health: 30, exp: 40 },
-    { name: "Death Reaper", img: "boss_2.png", attack: 15, health: 50, exp: 100 },
+    { name: "Flaming Skull", img: "enemy_6.png", attack: 15, health: 30, exp: 40 },
+    { name: "Death Reaper", img: "boss_2.png", attack: 25, health: 50, exp: 100 },
 ]
 
 function Enemies(props) {
@@ -21,6 +21,8 @@ function Enemies(props) {
     const [image, setImage] = useState(enemies[props.id].img);
     const [exp, setExp] = useState(enemies[props.id].exp);
     const [dead, setDead] = useState(false);
+    const [isPlaying, setisPlaying] = useState(true);
+
 
     useEffect(() => {
         setName(enemies[props.id].name);
@@ -58,10 +60,19 @@ function Enemies(props) {
     }, [currentHealth]);
 
 
+    useEffect(() => {
+        if (props.gameState == 1) {
+            setisPlaying(false)
+        }
+        if(props.gameState == 2){
+            setisPlaying(false)
+        }
+    }, [props])
+
     return (
         <div className='box red'>
             <div className='name'>{name}</div>
-            <img className='avatar' src={require(`../../Images/${dead ? image : 'dead.png'}`)}></img>
+            <img className='avatar' src={require(`../../Images/${dead ? 'dead.png' : image}`)}></img>
 
             <div className='stats'>
                 <img width={35} src={require('../../Images/heart.png')} className="p-2" />{currentHealth}/{health}
@@ -70,8 +81,8 @@ function Enemies(props) {
 
             </div>
 
-            <div className='button ' onClick={Attack}>Attack</div>
-            <div className='button green' onClick={HealPlayer}>Heal Player</div>
+            <div className='button' onClick={isPlaying && Attack}>Attack</div>
+            <div className='button green' onClick={isPlaying && HealPlayer}>Heal Player</div>
         </div>
     );
 }

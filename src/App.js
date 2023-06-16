@@ -171,6 +171,10 @@ function App() {
 
   }, [gameState])
 
+  const ReloadPage=()=>{
+    window.location.reload(false);
+  }
+
   return (
     <div className='mainContainer'>
       <div className='cardsContainer'>
@@ -181,7 +185,10 @@ function App() {
         {gameState == 0 ? `${message}` : ''}
         {gameState == 1 ? "You WON" : ''}
         {gameState == 2 ? "Game Over" : ''}
+
       </div>
+      {gameState == 1 ? <button className='button' onClick={ReloadPage}>Restart</button> : ''}
+      {gameState == 2 ? <button className='button' onClick={ReloadPage}>Restart</button> : ''}
 
     </div>
   );
