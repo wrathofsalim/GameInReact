@@ -7,15 +7,18 @@
     text-align: center;
     justify-content: space-around;
     color: white;
-    background-color: rgb(115, 123, 107);
+    background-color: rgb(88, 95, 80);
     border: 5px dotted black;
     border-radius: 20px;
+}
+
+.lowPlayerHealth{
+    background-color: rgb(158, 96, 2);
 }
 
 .cardsContainer {
     display: flex;
     flex-direction: row;
-
 }
 
 .messageContainer {
@@ -52,12 +55,14 @@
     display: flex;
     flex-direction: column;
     margin: 20px;
-    border: none;
-    border-radius: 10px;
-    padding: 10px;
+    border: solid black 5px;
+    border-radius: 25px;
+    padding: 20px;
     background-color: rgba(51, 85, 235, 0.499);
     width: 250px;
-    height: 450px;
+    height:fit-content;
+    max-height: 450px;
+
     font-size: 15px;
     align-items: center;
     text-align: center;

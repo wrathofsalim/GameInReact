@@ -81,7 +81,7 @@ function Enemies(props) {
         if (props.gameState == 1) {
             setisPlaying(false)
         }
-        if(props.gameState == 2){
+        if (props.gameState == 2) {
             setisPlaying(false)
         }
     }, [props])
@@ -98,8 +98,13 @@ function Enemies(props) {
 
             </div>
 
-            <div className='button' onClick={isPlaying && Attack}>Attack</div>
-            <div className='button green' onClick={isPlaying && HealPlayer}>Heal Player</div>
+            {
+                isPlaying &&
+                <>
+                    <div className='button' onClick={Attack}>Attack</div>
+                    <div className='button green' onClick={HealPlayer}>Heal Player</div>
+                </>
+            }
         </div>
     );
 }

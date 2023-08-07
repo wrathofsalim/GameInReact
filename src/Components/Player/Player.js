@@ -24,8 +24,10 @@ function Player(props) {
     useEffect(() => {
         if (health < (maxHealth * 0.35)) {
             setLowHealth(true);
+            props.setPlayerLowHealth(true);
         } else {
             setLowHealth(false);
+            props.setPlayerLowHealth(false);
         }
     }, [health])
 
@@ -40,7 +42,7 @@ function Player(props) {
     return (
         <div className={`box text-light ${lowHealth ? 'lowHealth' : ''} `}>
             <div className='name'>{name}</div>
-            <img className='avatar' src={require(`../../Images/${isDead?'dead':'heart'}.png`)}></img>
+            <img className='avatar' src={require(`../../Images/${isDead ? 'dead' : 'heart'}.png`)}></img>
 
             <div className='stats'>
                 <img width={35} src={require('../../Images/heart.png')} className="p-2" />{health}/{maxHealth}

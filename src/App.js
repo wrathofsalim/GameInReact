@@ -9,6 +9,7 @@ function App() {
   const [gameState, setGameState] = useState(0);
   const [playerMaxHealth, setPlayerMaxHealth] = useState(10);
   const [playerHealth, setPlayerHealth] = useState(10);
+  const [playerLowHealth, setPlayerLowHealth] = useState(false);
   const [level, setLevel] = useState(1);
   const [playerExp, setPlayerExp] = useState(0);
   const [message, setMessage] = useState("The game started.");
@@ -51,9 +52,8 @@ function App() {
       if (combinedExp >= 10) {
         expLeft = combinedExp - 10;
         setPlayerExp(expLeft);
-        setPlayerAttackDamage(playerAttackDamage + 1);
-        setPlayerMaxHealth(playerMaxHealth + 5);
-        setPlayerHealth(playerMaxHealth + 5);
+        setPlayerAttackDamage(playerAttackDamage + 2);
+        setPlayerMaxHealth(playerMaxHealth + 6);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -63,9 +63,8 @@ function App() {
       if (combinedExp >= 20) {
         expLeft = combinedExp - 20;
         setPlayerExp(expLeft);
-        setPlayerAttackDamage(playerAttackDamage + 2);
-        setPlayerMaxHealth(playerMaxHealth + 15);
-        setPlayerHealth(playerMaxHealth);
+        setPlayerAttackDamage(playerAttackDamage + 3);
+        setPlayerMaxHealth(playerMaxHealth + 9);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -75,9 +74,8 @@ function App() {
       if (combinedExp >= 30) {
         expLeft = combinedExp - 30;
         setPlayerExp(expLeft);
-        setPlayerAttackDamage(playerAttackDamage + 3);
-        setPlayerMaxHealth(playerMaxHealth + 5);
-        setPlayerHealth(playerMaxHealth);
+        setPlayerAttackDamage(playerAttackDamage + 4);
+        setPlayerMaxHealth(playerMaxHealth + 14);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -88,8 +86,7 @@ function App() {
         expLeft = combinedExp - 40;
         setPlayerExp(expLeft);
         setPlayerAttackDamage(playerAttackDamage + 5);
-        setPlayerMaxHealth(playerMaxHealth + 10);
-        setPlayerHealth(playerMaxHealth);
+        setPlayerMaxHealth(playerMaxHealth + 20);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -99,9 +96,8 @@ function App() {
       if (combinedExp >= 50) {
         expLeft = combinedExp - 50;
         setPlayerExp("Max Level");
-        setPlayerAttackDamage(playerAttackDamage + 5);
-        setPlayerMaxHealth(playerMaxHealth + 5);
-        setPlayerHealth(playerMaxHealth);
+        setPlayerAttackDamage(playerAttackDamage + 10);
+        setPlayerMaxHealth(playerMaxHealth + 25);
         setLevel(level + 1);
       } else {
         setPlayerExp("Max Level");
@@ -127,6 +123,7 @@ function App() {
     attack={playerAttackDamage}
     health={playerHealth}
     maxHealth={playerMaxHealth}
+    setPlayerLowHealth={(e)=>setPlayerLowHealth(e)}
     exp={playerExp}
     level={level}
     gameState={gameState}
@@ -155,6 +152,7 @@ function App() {
         name={"Player"}
         attack={playerAttackDamage}
         health={playerHealth}
+        setPlayerLowHealth={(e)=>setPlayerLowHealth(e)}
         maxHealth={playerMaxHealth}
         exp={playerExp}
         level={level}
@@ -181,7 +179,7 @@ function App() {
   }
 
   return (
-    <div className='mainContainer'>
+    <div className={`mainContainer ${playerLowHealth&&'lowPlayerHealth'}`} >
       <div className='cardsContainer'>
         {player}
         {enemy}
