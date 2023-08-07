@@ -1,16 +1,33 @@
 import './Enemies.css';
 import { useEffect, useState } from 'react';
 
+// let enemies = [
+//     { name: "Strange Plant", img: "enemy_1.png", attack: 2, health: 5, exp: 10 },
+//     { name: "Monster", img: "enemy_2.png", attack: 3, health: 15, exp: 15 },
+//     { name: "Flaming Ghost", img: "enemy_3.png", attack: 5, health: 10, exp: 20 },
+//     { name: "Dragon", img: "boss_1.png", attack: 7, health: 30, exp: 50 },
+//     { name: "Tired Monster", img: "enemy_4.png", attack: 5, health: 25, exp: 25 },
+//     { name: "Ghost Warrior", img: "enemy_5.png", attack: 9, health: 30, exp: 30 },
+//     { name: "Flaming Skull", img: "enemy_6.png", attack: 15, health: 30, exp: 40 },
+//     { name: "Death Reaper", img: "boss_2.png", attack: 25, health: 50, exp: 100 },
+// ]
+
 let enemies = [
-    { name: "Strange Plant", img: "enemy_1.png", attack: 2, health: 5, exp: 10 },
-    { name: "Monster", img: "enemy_2.png", attack: 3, health: 15, exp: 15 },
-    { name: "Flaming Ghost", img: "enemy_3.png", attack: 5, health: 10, exp: 20 },
-    { name: "Dragon", img: "boss_1.png", attack: 7, health: 30, exp: 50 },
-    { name: "Tired Monster", img: "enemy_4.png", attack: 5, health: 25, exp: 25 },
-    { name: "Ghost Warrior", img: "enemy_5.png", attack: 9, health: 30, exp: 30 },
-    { name: "Flaming Skull", img: "enemy_6.png", attack: 15, health: 30, exp: 40 },
-    { name: "Death Reaper", img: "boss_2.png", attack: 25, health: 50, exp: 100 },
-]
+    { name: "Slime", img: "enemy_1.png", attack: 2, health: 5, exp: 10 },
+    { name: "Goblin", img: "enemy_2.png", attack: 3, health: 15, exp: 15 },
+    { name: "Skeleton", img: "enemy_3.png", attack: 4, health: 10, exp: 20 },
+    { name: "Orc Warrior", img: "boss_1.png", attack: 8, health: 40, exp: 50 },
+    { name: "Zombie", img: "enemy_4.png", attack: 6, health: 25, exp: 25 },
+    { name: "Witch", img: "enemy_5.png", attack: 7, health: 30, exp: 30 },
+    { name: "Cyclops", img: "enemy_6.png", attack: 12, health: 35, exp: 40 },
+    { name: "Dark Sorcerer", img: "boss_2.png", attack: 30, health: 70, exp: 100 },
+    { name: "Werewolf", img: "enemy_7.png", attack: 9, health: 35, exp: 35 },
+    { name: "Vampire Bat", img: "enemy_8.png", attack: 10, health: 20, exp: 30 },
+    { name: "Harpy", img: "enemy_9.png", attack: 14, health: 40, exp: 45 },
+    { name: "Giant Spider", img: "boss_3.png", attack: 35, health: 80, exp: 120 },
+    // Add more enemies as needed
+];
+
 
 function Enemies(props) {
 

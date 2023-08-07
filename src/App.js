@@ -53,6 +53,7 @@ function App() {
         setPlayerExp(expLeft);
         setPlayerAttackDamage(playerAttackDamage + 1);
         setPlayerMaxHealth(playerMaxHealth + 5);
+        setPlayerHealth(playerMaxHealth + 5);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -64,6 +65,7 @@ function App() {
         setPlayerExp(expLeft);
         setPlayerAttackDamage(playerAttackDamage + 2);
         setPlayerMaxHealth(playerMaxHealth + 15);
+        setPlayerHealth(playerMaxHealth);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -75,6 +77,7 @@ function App() {
         setPlayerExp(expLeft);
         setPlayerAttackDamage(playerAttackDamage + 3);
         setPlayerMaxHealth(playerMaxHealth + 5);
+        setPlayerHealth(playerMaxHealth);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -86,6 +89,7 @@ function App() {
         setPlayerExp(expLeft);
         setPlayerAttackDamage(playerAttackDamage + 5);
         setPlayerMaxHealth(playerMaxHealth + 10);
+        setPlayerHealth(playerMaxHealth);
         setLevel(level + 1);
       } else {
         setPlayerExp(combinedExp);
@@ -97,6 +101,7 @@ function App() {
         setPlayerExp("Max Level");
         setPlayerAttackDamage(playerAttackDamage + 5);
         setPlayerMaxHealth(playerMaxHealth + 5);
+        setPlayerHealth(playerMaxHealth);
         setLevel(level + 1);
       } else {
         setPlayerExp("Max Level");
@@ -171,7 +176,7 @@ function App() {
 
   }, [gameState])
 
-  const ReloadPage=()=>{
+  const ReloadPage = () => {
     window.location.reload(false);
   }
 
